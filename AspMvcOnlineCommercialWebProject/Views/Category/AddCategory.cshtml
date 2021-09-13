@@ -1,0 +1,24 @@
+﻿@model MvcOnlineCommercialAutomation.Models.Classes.Category
+@{
+    ViewBag.Title = "AddCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!--<h2>AddCategory</h2>-->
+<!--Veritabanına ekleme işleminin yapılacağı AddCategory Action Result'ının view yani görünüm arayüz sayfası'-->
+<br />
+<h2>Yeni Kategori Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    <!--Html Helper yapısı vardır. Asp.Net'de olduğu gibi toolbox menüsü ve bunları ekleyebileceğim (input gibi) bir yapı MVC'de mevcut değildir
+        İşte bunları kullanmak için HTml Helper yapısı kullanılır. Yani bununla istediğim araçlarımı yapılarımı kullanmamı sağlar. Radiobutton,textarea gibi daha pek çok yapıyı
+        bununla kullanabiliriz.-->
+    @Html.LabelFor(x =>x.CategoryName) <!--Burada veritabanındaki ismi ne ise o isimle label'ı bana verir.'-->
+    @Html.TextBoxFor(x => x.CategoryName, new { @class="form-control" })<!--Bu kullanımın adı lambda operation'dır. Bununla veritabanındaki verilerimi getiriyorum. Syntax'ı bu şekildedir. Burada x soyut bir
+                                             değişken olarak düşünülebilir. Değişkenlere ulaşmayı sağlar.
+                                                                            class=Form-control ile biçimsel özellik verdim. Yani css verdim. -->
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+
+
+</form>

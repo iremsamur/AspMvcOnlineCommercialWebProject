@@ -1,0 +1,43 @@
+﻿@using MvcOnlineCommercialAutomation.Models.Classes
+@model List<Category>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!--<h2>Burası Kategori</h2>-->
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>ID</th>
+        <th>Kategori Adı</th>
+        <th>Sil</th> <!--Silme işlemi için-->
+        <th>Güncelle</th> <!--Güncelleme işlemi için-->
+    </tr>
+    @foreach (var c in Model)
+    {
+        <tr>
+            <td>
+                @c.CategoryID
+            </td>
+            <td>
+                @c.CategoryName
+            </td>
+            <td>
+                <a href="/Category/DeleteCategory/@c.CategoryID" class="btn btn-danger">Sil</a><!--Controller'dan gelen id'ye ait değeri siler. c.CategoryID bu sayfada sil butonuna tıklanan Category verisinin id'sini alır. Ve bu id'li kategoriyi siler-->
+            </td>
+            <td>
+                <a href="/Category/UpdateCategory/@c.CategoryID" class="btn btn-success">Güncelle</a><!--Controller'dan gelen id'ye ait değeri siler. c.CategoryID bu sayfada sil butonuna tıklanan Category verisinin id'sini alır. Ve bu id'li kategoriyi günceller-->
+            </td>
+        </tr>
+
+
+
+
+
+    }
+
+
+
+</table>
+<a href="/Category/AddCategory" class="btn btn-primary">Kategori Ekle</a><!--Kategori ekle butonuna tıklanıldığında kategori ekleme sayfasına gitsin dedik. Category yani Category Controller'ı içinde bulunan AddCategory action result'ına gider. Bu action resultda AddCtaegory vire'ına bağlı
+                                                                             olduğundan bu view'e bizi götürür.-->

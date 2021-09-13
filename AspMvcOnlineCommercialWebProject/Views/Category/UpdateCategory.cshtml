@@ -1,0 +1,27 @@
+﻿@model MvcOnlineCommercialAutomation.Models.Classes.Category
+@{
+    ViewBag.Title = "UpdateCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<!--Kategori güncelleme işlemi UpdateCategory Action result View'i'-->
+<!--<h2>UpdateCategory</h2>-->
+<br />
+<h2>Kategori Güncelleme</h2>
+<br />
+@using (Html.BeginForm("CategoryUpdateOperation", "Category", FormMethod.Post))
+{
+    <!--Begin Form oluşturuyorum. Bu sayfa yüklendikten sonra bir post işlemi gerçekleştirdiğim zaman hangi action result çalışacağını belirtiyorum.-->
+            <!--BeginForm içine önce Action Result Adı sonra bu Action resultın bulunduğu controller adı yazılır. Bu güncelleme işlemini yapan CategoryUpdateOperation Action Result'ı ve Category yani CategoryController içinde'
+                Ve üçüncü parametrede FormMethod = post olduğunda çalış dedik.-->
+    <div class="form-group">
+        @Html.LabelFor(x => x.CategoryName)
+        @Html.TextBoxFor(x => x.CategoryName, new { @class="form-control"})<!-- Böylece güncelleme yapabilmek için gereken sayfa geliyor. Ve bu sayfada tıkladığım kategorinin adıda geliyor.-->
+        <!--Burada şuanda güncelleme işlemi için action result yazmadığımdan henüz güncelleme yapmadı sadece seçili kategorinin değerlerini UpdateCategory view sayfasına getirdi-->
+    
+        <!--güncelleme işlemini yapabilmesi için id'yi gizli bir textboxda tutalım . bunun içni hiddenfor kullandım-->
+        @Html.HiddenFor(x => x.CategoryID)
+    </div>
+ 
+    <button class="btn btn-warning">Güncelle</button>
+
+}
