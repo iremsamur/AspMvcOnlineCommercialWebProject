@@ -1,0 +1,13 @@
+﻿@model MvcOnlineCommercialAutomation.Models.Classes.Product
+@{
+    ViewBag.Title = "NewProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Ürün Sayfası</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x=>x.ProductName)
+    @Html.TextBoxFor(x => x.ProductName, new {@class="form-control"})
+
+</form>

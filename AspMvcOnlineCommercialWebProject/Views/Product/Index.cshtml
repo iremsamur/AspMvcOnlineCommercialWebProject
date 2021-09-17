@@ -20,5 +20,24 @@
         <th>Kategori</th>
         <th>Görsel</th>
     </tr>
+    @foreach(var p in Model)
+     {
+        <tr>
+            <!--ürünleri listeleyelim-->
+            <td>@p.ProductID</td>
+            <td>@p.ProductName</td>
+            <td>@p.Brand</td>
+            <td>@p.Stock</td>
+            <td>@p.PurchasePrice</td>
+            <td>@p.SalePrice</td>
+            <td>@p.Category.CategoryName</td><!--İlişkili tablolardan geleceği için Category içindeki Category Name olur.-->
+            <td>@p.ProductImage</td>
+
+
+        </tr>
+     }
 
 </table>
+<!--yeni ürün eklemek için-->
+
+<a href="/Product/AddProduct" class="btn btn-primary">Ürün Ekle</a>

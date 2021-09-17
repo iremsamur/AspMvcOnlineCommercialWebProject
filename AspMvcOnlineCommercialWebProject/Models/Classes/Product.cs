@@ -25,7 +25,9 @@ namespace MvcOnlineCommercialAutomation.Models.Classes
         [StringLength(250)]//Veritabanında fazla yer kaplamaması için tüm string türlü özelliklere bu kısıtlamaları getiriyorum.
         public string ProductImage { get; set; }
         //İlişki karşılığı için, her ürünün bir tane kategorisi olabiliri şöyle yazarız.
-        public Category Category { get; set; }//Kategori tablosuyla ilişkisini yazdım.
+        public virtual Category Category { get; set; }//Kategori tablosuyla ilişkisini yazdım.
+        //DbFirst kullanmadığımız için virtual gelmedi . O yüzden ilişkili tablolardaki değerler kullanmak için virtual yazarım.
+        //Böylece Category sınıfındaki değerlere ulaşabilirim.
 
         //Satış hareketleri ile ilişkisi 
         public ICollection<SalesMove> SalesMoves { get; set; }

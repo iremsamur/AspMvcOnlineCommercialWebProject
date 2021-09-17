@@ -19,5 +19,20 @@ namespace AspMvcOnlineCommercialWebProject.Controllers
             var products = context.Products.ToList();
             return View(products);
         }
+        //yeni ürün için action result
+        [HttpGet]
+        public ActionResult AddProduct()//Buna bir view ekleyelim.
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddProduct(Product p)
+        {
+            context.Products.Add(p);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+            
+        }
+
     }
 }
