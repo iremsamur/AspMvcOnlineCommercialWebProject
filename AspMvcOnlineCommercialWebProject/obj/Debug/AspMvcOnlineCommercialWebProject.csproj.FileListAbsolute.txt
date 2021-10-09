@@ -78,6 +78,5 @@ C:\Users\User\Desktop\C# Projects\AspMvcOnlineCommercialWebProject\AspMvcOnlineC
 C:\Users\User\Desktop\C# Projects\AspMvcOnlineCommercialWebProject\AspMvcOnlineCommercialWebProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\User\Desktop\C# Projects\AspMvcOnlineCommercialWebProject\AspMvcOnlineCommercialWebProject\obj\Debug\AspMvcOnlineCommercialWebProject.csproj.AssemblyReference.cache
 C:\Users\User\Desktop\C# Projects\AspMvcOnlineCommercialWebProject\AspMvcOnlineCommercialWebProject\obj\Debug\AspMvcOnlineCommercialWebProject.csproj.CoreCompileInputs.cache
-C:\Users\User\Desktop\C# Projects\AspMvcOnlineCommercialWebProject\AspMvcOnlineCommercialWebProject\obj\Debug\AspMvcOnlineCommercialWebProject.csproj.CopyComplete
 C:\Users\User\Desktop\C# Projects\AspMvcOnlineCommercialWebProject\AspMvcOnlineCommercialWebProject\obj\Debug\AspMvcOnlineCommercialWebProject.dll
 C:\Users\User\Desktop\C# Projects\AspMvcOnlineCommercialWebProject\AspMvcOnlineCommercialWebProject\obj\Debug\AspMvcOnlineCommercialWebProject.pdb

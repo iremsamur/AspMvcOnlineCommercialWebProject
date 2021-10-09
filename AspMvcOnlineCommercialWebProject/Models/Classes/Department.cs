@@ -16,6 +16,7 @@ namespace MvcOnlineCommercialAutomation.Models.Classes
         public string DepartmentName { get; set; }
         //Bir departman birden fazla personelde bulunabilir. Ama yine her personelin sadece bir departmanı olabilir . 1'e N ilişki var
         //Şimdi Departman ve Employee arasında ilişkiyi yazalım.//Çok bulunabilecek , tekrarlanacak olana buna ICollection yazarım.
+        public bool Durum { get; set; }
         public ICollection<Employee> Employees { get; set; }
     }
 }

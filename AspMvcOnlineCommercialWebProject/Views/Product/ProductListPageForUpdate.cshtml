@@ -1,12 +1,18 @@
 ﻿@model MvcOnlineCommercialAutomation.Models.Classes.Product
 @{
-    ViewBag.Title = "NewProduct";
+    ViewBag.Title = "ProductListPageForUpdate";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h2>Yeni Ürün Sayfası</h2>
 <br />
-<form class="form-group" method="post">
+<h2>Ürün Güncelleme Sayfası</h2>
+<br />
+
+@using (Html.BeginForm("ProductUpdate", "Product", FormMethod.Post))//Burası çalışınca id değerine göre seçilen ürünün özellikleri burada listelenir.
+                                                                   //Ve kullanıcı burada update butonuna tıklayınca ProductUpdate controller'ına giderek güncelleme işlemini gerçekleştirir.
+{
+    //Benim burada hata almamam için Hidden for ile id'yi burada tutmam gerekir.
+    @Html.HiddenFor(x => x.ProductID) <!--eğer bunu yazmazsam hata gönderir-->
     <label class="col-form-label">Ürün Adı</label>
     @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
     <!--Burada x.ProductName veritabanındaki ve buradaki classdaki property adı olur.-->
@@ -24,15 +30,8 @@
     @Html.TextBoxFor(x => x.SalePrice, new { @class = "form-control" })
     <br />
     <label class="col-form-label">Kategori</label>
-    <!--Şimdi controller tarafında get metodu içinde yazdığım Viewbag.a değerini burada dropdown içinde
-        çağırarak kategori adlarını dropdown içinde listeleyelim.
-        -->
-    @Html.DropDownListFor(x => x.CategoryID,(List<SelectListItem>)ViewBag.a,new { @class="form-control"})
-    <!--Category id değerine Viewvbag.a ile bir list oluşturup
-        bu listeden gelen değerleri vererek dropdown list oluşturdum
-        Burada x.CategoryID veritabanındaki ve buradaki classdaki property adı olur.
-        -->
-    <!--Ve böylece dropdown listten gelen verinin kaydını yapar.-->
+    @Html.DropDownListFor(x => x.CategoryID, (List<SelectListItem>)ViewBag.a, new { @class = "form-control" })
+
     <br />
     <label class="col-form-label">Ürün Resmi</label>
     @Html.TextBoxFor(x => x.ProductImage, new { @class = "form-control" })
@@ -41,8 +40,8 @@
     @Html.TextBoxFor(x => x.Durum, new { @class = "form-control" })
     <br />
 
-    <button class="btn btn-primary">Kaydet</button>
+    <button class="btn btn-warning">Güncelle</button>
 
 
 
-</form>
+}

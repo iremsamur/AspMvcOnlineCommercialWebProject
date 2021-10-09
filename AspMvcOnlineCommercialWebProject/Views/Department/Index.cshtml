@@ -1,0 +1,50 @@
+﻿@using MvcOnlineCommercialAutomation.Models.Classes
+@model List<Department>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@*<h2>Burası Departmanlar View'i</h2>*@
+<!--Kategorideki aynı işlemleri buraya departmanlar için yazıyorum
+    Burada departmanları listeliyoruz-->
+<table class="table table-bordered" style="margin-top:20px">
+    <tr>
+        <th>ID</th>
+        <th>Departman Adı</th>
+        <th>Sil</th> <!--Silme işlemi için-->
+        <th>Güncelle</th> <!--Güncelleme işlemi için-->
+        <th>Detaylar</th>
+    </tr>
+    @foreach (var c in Model)
+    {
+<tr>
+    <td>
+        @c.DepartmentID
+    </td>
+    <td>
+        @c.DepartmentName
+    </td>
+    <td>
+        <a href="/Department/DeleteDepartment/@c.DepartmentID" class="btn btn-danger">Sil</a>
+    </td>
+    <td>
+        <a href="/Department/UpdateDepartment/@c.DepartmentID" class="btn btn-warning">Güncelle</a>
+    </td>
+    <!--Departmanla ilgili detayları içeren sayfa için Departman detay olsun.-->
+    <td>
+        <a href="/Department/UpdateDepartment/@c.DepartmentID" class="btn btn-default" style="background-color : fuchsia; color:white;">Detaylar</a>
+    </td>
+</tr>
+
+
+
+
+
+    }
+
+
+
+</table>
+<a href="/Department/AddDepartment" class="btn btn-primary">Departman Ekle</a>
+

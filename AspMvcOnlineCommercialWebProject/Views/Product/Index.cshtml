@@ -19,22 +19,27 @@
         <th>Satış Fiyat</th>
         <th>Kategori</th>
         <th>Görsel</th>
+        <th>Sil</th>
     </tr>
     @foreach(var p in Model)
      {
-        <tr>
-            <!--ürünleri listeleyelim-->
-            <td>@p.ProductID</td>
-            <td>@p.ProductName</td>
-            <td>@p.Brand</td>
-            <td>@p.Stock</td>
-            <td>@p.PurchasePrice</td>
-            <td>@p.SalePrice</td>
-            <td>@p.Category.CategoryName</td><!--İlişkili tablolardan geleceği için Category içindeki Category Name olur.-->
-            <td>@p.ProductImage</td>
+<tr>
+    <!--ürünleri listeleyelim-->
+    <td>@p.ProductID</td>
+    <td>@p.ProductName</td>
+    <td>@p.Brand</td>
+    <td>@p.Stock</td>
+    <td>@p.PurchasePrice</td>
+    <td>@p.SalePrice</td>
+    <td>@p.Category.CategoryName</td><!--İlişkili tablolardan geleceği için Category içindeki Category Name olur.-->
+    <td>@p.ProductImage</td>
+    <td><a href="/Product/ProductDelete/@p.ProductID" class="btn btn-danger">Sil</a></td><!--ürün silme işlemi için
+    seçilen ürünün yani butona tıklanan ürünün id değerini alır.-->
+    <td><a href="/Product/ProductListPageForUpdate/@p.ProductID" class="btn btn-success">Güncelle</a></td>
 
 
-        </tr>
+
+</tr>
      }
 
 </table>
